@@ -3,7 +3,7 @@
 wget -O https://github.com/deemru/chromium-gost/releases/download/76.0.3809.100/chromium-gost-76.0.3809.100-linux-amd64.deb
 sudo dpkg -i chromium-gost-76.0.3809.100-linux-amd64.deb
 
-# Весь нужный софт был собран с сети и находился в свободном доступе. Всё объединил в один архив: ubuntu_crypto.zip
+# Весь нужный софт был собран с сети и находился в свободном доступе. Всё объединино в один архив: ubuntu_crypto.zip
 # https://drive.google.com/uc?id=1FhQQK00z2x8tBEOjG_ge6C0TRLpJaAwt&export=download
 
 # 2. Устанавливаем CryptoPro:
