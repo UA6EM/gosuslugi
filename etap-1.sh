@@ -7,15 +7,13 @@ exit 1
 }
 
 function prereq() {
-sudo yum install -y epel-release || die "Install EPEL Repo"
-sudo yum install -y git make libtool perl-core wget zlib-devel autoconf cmake3 unzip usbutils ntfs-3g || die "Install soft"
-sudo ln -s /usr/bin/cmake3 /usr/bin/cmake || dies "Links to cmake3"
+sudo apt install -y unzip || die "Install soft"
 }
 
 function download() {
-sudo mkdir -p distr
-sudo wget -O distr/openssl.zip -c https://codeload.github.com/openssl/openssl/zip/OpenSSL_1_1_1-stable || die "download openssl"
-sudo wget -O distr/gost-engine.zip -c https://codeload.github.com/gost-engine/engine/zip/1b374532c2d494710c39371e83c197d08c65e8bc || die "download gost-engine"
+sudo mkdir -p distrib
+sudo wget -O distrib/openssl.zip -c https://codeload.github.com/openssl/openssl/zip/OpenSSL_1_1_1-stable || die "download openssl"
+sudo wget -O distrib/gost-engine.zip -c https://codeload.github.com/gost-engine/engine/zip/1b374532c2d494710c39371e83c197d08c65e8bc || die "download gost-engine"
 }
 
 function unpack() {
