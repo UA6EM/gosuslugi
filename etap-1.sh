@@ -11,10 +11,12 @@ sudo apt install -y unzip || die "Install soft"
 }
 
 function download() {
-sudo mkdir -p distrib
-sudo wget -O distrib/openssl.zip -c https://codeload.github.com/openssl/openssl/zip/OpenSSL_1_1_1-stable || die "download openssl"
+sudo mkdir -p /usr/local/src/distrib
+sudo wget -O /usr/local/src/distrib/chromium-gost-76.0.3809.100-linux-amd64.deb -c https://github.com/deemru/chromium-gost/releases/download/76.0.3809.100/chromium-gost-76.0.3809.100-linux-amd64.deb --no-check-certificate|| die "download openssl"
 sudo wget -O distrib/gost-engine.zip -c https://codeload.github.com/gost-engine/engine/zip/1b374532c2d494710c39371e83c197d08c65e8bc || die "download gost-engine"
 }
+sudo wget -O /usr/local/src/distrib/chromium-gost-76.0.3809.100-linux-amd64.deb -c https://github.com/deemru/chromium-gost/releases/download/76.0.3809.100/chromium-gost-76.0.3809.100-linux-amd64.deb|| die "download openssl"
+
 
 function unpack() {
 cd distr
