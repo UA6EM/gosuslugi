@@ -120,5 +120,15 @@ sudo apt install motif*
 # как временное решение - /opt/cprocsp/bin/amd64/csptest -keyset -enum -verifycontext -fqcn | iconv -f cp1251
 # но я бы порекомендовал сохранить контейнер в латинской кодировке (их под windows на флэш накопитель)
 
+# О Крипто-Про
+# По умолчанию пакет устанавливается с временной лицензией на три месяца, посмотреть данные можно так:
+/opt/cprocsp/sbin/amd64/cpconfig -license -view 
+
+# Ввести лицензионный ключ:
+/opt/cprocsp/sbin/amd64/cpconfig -license -set ваш лицензионный ключ
+
+# Ввести лицензионный ключ можно и из оболочки GUI из папки установщика Крипто-Про:
+sudo ./install_gui.sh
+
 
 
