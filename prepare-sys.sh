@@ -37,4 +37,28 @@ sudo alien -kci cprocsp-pki-2.0.0-amd64-plugin.rpm
 # Делаем ссылку на установленный плагин
 sudo ln -s  /opt/cprocsp/lib/amd64/libnpcades.so /usr/lib/firefox-addons/plugins/libnpcades.so
 
+# 4. Устанавливем IFCPlugin для работы с порталами с ЕСИА(Госуслуги).
+sudo dpkg -i IFCPlugin-x86_64.deb
+
+# 4.1 После успешной установки заменяем дефолтный файл /etc/ifc.cfg на файл ifc.cfg из архива.
+
+# 4.2 Обязательно делаем символьную ссылку на библиотеку pkcs11 из пакета CryptoPro для использования IFCPlugin
+sudo ln -s /opt/cprocsp/lib/amd64/libcppkcs11.so.4.0.4 /usr/lib/mozilla/plugins/lib/libcppkcs11.so
+
+# 4.3 Если мы хотим работать на Госуслугах через chromium-gost, необходимо ему подсунуть ссылку на плагин, 
+# так как разрабы этого плагина, почему-то забыли про существования chromium и в deb пакете с плагином присутствуют
+# конфиги только для Firefox и google-chrome.
+udo ln -s /etc/opt/chrome/native-messaging-hosts/ru.rtlabs.ifcplugin.json /etc/chromium/native-messaging-hosts
+
+# Установку завершили. Осталось теперь при первом входе на порталы установить расширения для CadeslPlugin и (Firefox
+# сам предложит его установить при первом входе на портал где он используется) и установить Расширение для плагина
+# Госуслуг в chromium-gost
+
+
+
+
+
+
+
+
 
