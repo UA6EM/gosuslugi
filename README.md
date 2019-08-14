@@ -106,4 +106,4 @@ https://www.rutoken.ru/support/download/drivers-for-nix/
 Использовались материалы сайтов
 1. https://multiblog67.ru/raznoe/29-ubuntu/201-ustanovka-i-nastrojka-kriptopro-v-ubuntu-linux-18-04.html
 2. https://forum.ubuntu.ru/index.php?topic=300549.0
-3. 
+3. https://www.cryptopro.ru/forum2/default.aspx?g=posts&t=2233
