@@ -54,6 +54,23 @@ udo ln -s /etc/opt/chrome/native-messaging-hosts/ru.rtlabs.ifcplugin.json /etc/c
 # сам предложит его установить при первом входе на портал где он используется) и установить Расширение для плагина
 # Госуслуг в chromium-gost
 
+# Далее, для работы необходимо установить в CryptoPro по порядку: корневой сертификат, промежуточные сертификаты, 
+# и личный с ссылкой на контейнер с закрытым ключём:
+
+ # 1. Нужно убедиться что CryptoPro видит наш контейнер с закрытым ключём, обратите внимание что контейнер должен быть 
+ # доступен обычному пользователю, под которым вы работаете в системе:
+ /opt/cprocsp/bin/amd64/csptest -keyset -enum_cont -verifycontext -fqcn
+ 
+# CSP (Type:80) v4.0.9017 KC2 Release Ver:4.0.9944 OS:Linux CPU:AMD64 FastCode:READY:AVX.
+# AcquireContext: OK. HCRYPTPROV: 12104259
+# \\.\HDIMAGE\xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+# \\.\Aktiv Co. Rutoken S 00 00\xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+# OK.
+# Total: SYS: 0,000 sec USR: 0,000 sec UTC: 0,320 sec
+# [ErrorCode: 0x00000000]
+
+
+
 
 
 
