@@ -77,6 +77,13 @@ sudo alien -kci cprocsp-pki-plugin_2.0.0-2_amd64.deb
 Далее необходимо в используемом вами браузере установить расширение КриптоПро ЭЦП Browser plug-in. Cсылка на расширение для Google Chrome
 https://chrome.google.com/webstore/detail/cryptopro-extension-for-c/iifchhfnnmpdbibifmljnfjhpififfog
 
+Тестирование работоспособности подписи
+Если вы все сделали правильно, то КриптоПро настроен. Проверить подпись можно по ссылке
+https://www.cryptopro.ru/sites/default/files/products/cades/demopage/simple.html
+
+Доополнительное ПО для Рутокена
+Если вам понадобятся дополнительные плагины или драйвера для Рутокена, то скачать вы всегда их сможете с официального сайта производителя по ссылке, которая указана ниже:
+https://www.rutoken.ru/support/download/drivers-for-nix/
 
 
 
