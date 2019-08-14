@@ -69,6 +69,37 @@ udo ln -s /etc/opt/chrome/native-messaging-hosts/ru.rtlabs.ifcplugin.json /etc/c
 # Total: SYS: 0,000 sec USR: 0,000 sec UTC: 0,320 sec
 # [ErrorCode: 0x00000000]
 
+# 2.Устанавливаем корневые и промежуточные сертификаты, чтобы цепочка сертификатов была доверенной:
+sudo /opt/cprocsp/bin/amd64/certmgr -inst -store uroot -file путь_к_файлу_с_сертификатом
+sudo /opt/cprocsp/bin/amd64/certmgr -inst -store uca -file путь_к_файлу_с_сертификатом
+
+# 3. Устанавливаем личный сертификат с ссылкой на наш контейнер содержащий закрытый ключ:
+/opt/cprocsp/bin/amd64/certmgr -inst -store umy -file путь_к_файлу_с_сертификатом -cont '\\.\HDIMAGE\xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx'
+
+# 4. Проверить что сертификат установлен и имеется ссылка на закрытый ключ (PrivateKey Link: Yes):
+/opt/cprocsp/bin/amd64/certmgr -list -store umy
+
+# Issuer              : E=pki@omskportal.ru, OGRN=1045504013906, INN=005503080925, C=RU, S=55 Омская область, L=Омск, STREET=Красный Путь 109, OU=Отдел информационной безопасности, O=Главное управление информационных технологий и связи Омской области, CN=Государственный УЦ Омской области
+# Subject             : OGRN=1025501179274, SNILS=11335005899, INN=005505016361, C=RU, S=55 Омская область, L=Омск, O="БУЗОО ""ГП №3""", CN="XXXXX", STREET=XXXXX а, T=XXXXXт, G=XXXXXX, SN=XXXXXX
+# Serial              : 0xXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# SHA1 Hash           : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# SubjKeyID           : XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+# Signature Algorithm : ГОСТ Р 34.11/34.10-2001
+# PublicKey Algorithm : ГОСТ Р 34.10-2001 (512 bits)
+# Not valid before    : 09/04/2018  06:47:12 UTC
+# Not valid after     : 09/04/2019  06:57:12 UTC
+# PrivateKey Link     : Yes                 
+# Container           : HDIMAGE\\XXXXXXXX.000\XXXX
+# Provider Name       : Crypto-Pro GOST R 34.10-2012 KC2 CSP
+# Provider Info       : ProvType: 80, KeySpec: 1, Flags: 0x0
+# CA cert URL         : http://pki.omskportal.ru/dms/cdp2/guc_cer/guc.cer
+# CDP                 : http://pki.omskportal.ru/dms/cdp2/guc_crl/guc.crl
+# Extended Key Usage  : 1.3.6.1.5.5.7.3.2
+#                       1.3.6.1.5.5.7.3.4
+#                       1.2.643.5.1.29
+#                       1.2.643.5.1.24.2.6
+#                       1.2.643.2.2.34.6
+#                       1.2.643.100.2.1
 
 
 
